@@ -1,0 +1,24 @@
+<%= render partial: "dashboard/links", locals: {} %>
+
+<h1>All Users </h1>
+
+<div id="response"></div>
+
+<table>
+  <thead>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Email</th>
+    <th>Action</th>
+  </thead>
+  <tbody>
+  <% @all_users.each do |user| %>
+  <tr>
+    <td><%=user.first_name %></td>
+    <td><%=user.last_name %></td>
+    <td><%=user.email %></td>
+    <td> <%= link_to "Follow", follow_path( follower_id: user.id ), method: :post, remote: true %></td>
+  </tr>
+  <% end %>
+  </tbody>
+</table>

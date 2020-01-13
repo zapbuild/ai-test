@@ -1,0 +1,14 @@
+<%= render partial: "dashboard/links", locals: {} %>
+
+<h1>Tweets</h1>
+
+<div>
+  <% @tweets.each do |tweet| %>
+    <div>
+      <h3><%= tweet.title %></h3>
+      <div> Author: <%= tweet.user.email %> </div>
+      <div> <%= tweet.description  %> </div>
+      <div> <%= l tweet.created_at %></div>
+    </div>
+  <% end %>
+</div>
